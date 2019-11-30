@@ -609,11 +609,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #qbootstrap-couple img {
-  margin-bottom: 20px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
+  margin-bottom: 50px;
 }
 #qbootstrap-couple h3 {
   font-size: 34px;

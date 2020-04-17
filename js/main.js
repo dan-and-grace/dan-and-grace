@@ -165,7 +165,7 @@
 		   	var header = $('#qbootstrap-header'),
 				scrlTop = $(this).scrollTop();
 
-			if ( scrlTop > 500 && scrlTop <= 2000 ) {
+			if ( scrlTop > 0 && scrlTop <= 2000 ) {
 				header.addClass('navbar-fixed-top qbootstrap-animated slideInDown');
 			} else if ( scrlTop <= 500) {
 				if ( header.hasClass('navbar-fixed-top') ) {
@@ -300,7 +300,7 @@
 		sliderMain();
 		clickMenu();
 		parallax();
-		// windowScroll();
+		windowScroll();
 		navigationSection();
 		contentWayPoint();
 		inlineSVG();

@@ -15,10 +15,12 @@ export default function Home() {
           priority
         />
         <div className="flex flex-col text-center gap-7">
-          <div className="flex flex-col text-center gap-1">
+          <div className="gap-1">
             <p className="text-3xl font-semibold">Dan & Grace</p>
-            <p className="text-2xl font-medium">10th May 2023</p>
-            <p className="text-2xl font-medium">Carlton, Nottingham, UK</p>
+            <div className="text-2xl font-medium">
+              <p>10th May 2023</p>
+              <p>Carlton, Nottingham, UK</p>
+            </div>
           </div>
           <p className="font-medium">More information to come!</p>
         </div>

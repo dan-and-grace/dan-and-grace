@@ -6,7 +6,7 @@ export default function SaveTheDateApp() {
       <VStack p={3} w="100vw" textAlign="center">
         <Image
           maxH="50vh"
-          maxW={700}
+          maxW={750}
           rounded="sm"
           objectFit="cover"
           src="save_the_date_nottingham.svg"

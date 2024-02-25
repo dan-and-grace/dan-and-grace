@@ -19,7 +19,7 @@ export default function SaveTheDateApp() {
           <Text fontSize="3xl" fontWeight={600}>
             10th May 2025
           </Text>
-          <Text fontFamily="Pacifico">for the wedding of</Text>
+          <Text fontFamily="Pacifico, sans-serif">for the wedding of</Text>
           <Text fontSize="2xl">Dan Bartley & Grace Chin</Text>
           <Text fontSize="xl">Carlton, Nottingham, UK</Text>
           <Text>Invite & updates on this website to come!</Text>

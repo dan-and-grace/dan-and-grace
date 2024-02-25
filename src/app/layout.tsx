@@ -55,7 +55,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="h-full" style={{ background: "#FDF5E6" }}>
+      <body className="h-full">
         <Providers>{children}</Providers>
       </body>
     </html>

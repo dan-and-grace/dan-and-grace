@@ -6,7 +6,7 @@ export default function SaveTheDateApp() {
       <VStack p={3} w="100vw" textAlign="center">
         <Image
           maxH="50vh"
-          maxW={750}
+          minW={750}
           rounded="sm"
           objectFit="cover"
           src="save_the_date_nottingham.svg"
@@ -22,7 +22,7 @@ export default function SaveTheDateApp() {
           <Text fontFamily="Pacifico, sans-serif">for the wedding of</Text>
           <Text fontSize="2xl">Dan Bartley & Grace Chin</Text>
           <Text fontSize="xl">Carlton, Nottingham, UK</Text>
-          <Text>Invite & updates on this website to come!</Text>
+          <Text>Invitations & updates on this website to come!</Text>
         </VStack>
       </VStack>
     </main>

@@ -7,7 +7,7 @@ export default function Page() {
     <>
       <Alert status="warning" position="absolute">
         <AlertIcon />
-        Please don't rely on any information shown here. This page is a work in
+        Please do not rely on any information shown here. This page is a work in
         progress.
       </Alert>
       <WorkInProgressWarningDialog />

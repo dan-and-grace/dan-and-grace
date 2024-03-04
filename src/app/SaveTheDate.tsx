@@ -1,4 +1,4 @@
-import { Heading, Image, VStack, Text } from "@chakra-ui/react";
+import { Heading, Image, VStack, Text, Button } from "@chakra-ui/react";
 
 export default function SaveTheDateApp() {
   return (

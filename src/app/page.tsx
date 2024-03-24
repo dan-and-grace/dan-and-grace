@@ -1,5 +1,5 @@
-import SaveTheDateApp from "./SaveTheDate";
+import SaveTheDatePage from "./SaveTheDate";
 
 export default function Page() {
-  return <SaveTheDateApp />;
+  return <SaveTheDatePage />;
 }

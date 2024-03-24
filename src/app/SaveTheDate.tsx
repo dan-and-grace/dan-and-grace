@@ -1,6 +1,6 @@
-import { Heading, Image, VStack, Text, Button } from "@chakra-ui/react";
+import { Heading, Image, VStack, Text } from "@chakra-ui/react";
 
-export default function SaveTheDateApp() {
+export default function SaveTheDatePage() {
   return (
     <main className="flex flex-col items-center justify-center h-full overflow-hidden">
       <VStack p={3} w="100vw" textAlign="center">

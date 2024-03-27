@@ -1,44 +1,31 @@
-import {
-  Box,
-  Button,
-  Divider,
-  Link,
-  StackProps,
-  Text,
-  VStack,
-  useDisclosure,
-  useMediaQuery,
-} from "@chakra-ui/react";
-import { useState } from "react";
+import { Box, StackProps, useDisclosure } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
-const ResponsiveVerticalNavBar = ({ children, ...props }: StackProps) => {
-  const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
+interface NavBarProps extends StackProps {
+  isMobile: boolean;
+  children: React.ReactNode;
+  disclosure: ReturnType<typeof useDisclosure>;
+}
 
-  const { getDisclosureProps, isOpen, onClose, onOpen } = useDisclosure();
+export default function NavBar({
+  isMobile,
+  disclosure,
+  children,
+  ...props
+}: NavBarProps) {
+  const { getDisclosureProps, isOpen } = disclosure;
   const [hidden, setHidden] = useState(!isOpen);
 
-  return isLargerThan800 ? (
-    <Box
-      top={0}
-      height="100vh"
-      borderRightWidth="1px"
-      borderRightStyle="solid"
-      borderRightColor="black"
-      {...props}
-    >
-      {children}
-    </Box>
-  ) : (
+  return isMobile ? (
     <Box position="absolute">
-      <Button onClick={onOpen}>Toggle</Button>
       <motion.div
         {...getDisclosureProps()}
         hidden={hidden}
         initial={false}
         onAnimationStart={() => setHidden(false)}
         onAnimationComplete={() => setHidden(!isOpen)}
-        animate={{ width: isOpen ? 500 : 0 }}
+        animate={{ width: isOpen ? "100vw" : 0 }}
         style={{
           background: "white",
           overflow: "hidden",
@@ -49,31 +36,19 @@ const ResponsiveVerticalNavBar = ({ children, ...props }: StackProps) => {
           top: "0",
         }}
       >
-        <Button onClick={onClose}>Close</Button>
         {children}
       </motion.div>
     </Box>
-  );
-};
-
-export default function NavBar(props: StackProps) {
-  return (
-    <ResponsiveVerticalNavBar {...props}>
-      <VStack padding="2em">
-        <VStack gap={0}>
-          <Text fontWeight={600}>the wedding of</Text>
-          <Text fontSize="2xl" fontWeight={700}>
-            Dan & Grace
-          </Text>
-        </VStack>
-        <Divider marginBottom="1em" />
-        <Link>Location</Link>
-        <Link>Schedule</Link>
-        <Link>Travel</Link>
-        <Link>Accomodation</Link>
-        <Link>Nottingham</Link>
-        <Link>Q & A</Link>
-      </VStack>
-    </ResponsiveVerticalNavBar>
+  ) : (
+    <Box
+      top={0}
+      height="100vh"
+      borderRightWidth="1px"
+      borderRightStyle="solid"
+      borderRightColor="black"
+      {...props}
+    >
+      {children}
+    </Box>
   );
 }

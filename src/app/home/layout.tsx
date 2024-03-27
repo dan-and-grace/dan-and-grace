@@ -21,6 +21,8 @@ export default function HomeLayout({
   const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
   const navBarDisclosure = useDisclosure();
   const { isOpen, onOpen, onClose } = navBarDisclosure;
+  const navbarWidth = "15em";
+  const isMobileNavBarVisible = isOpen && !isLargerThan800;
 
   useEffect(() => {
     // Default navbar menu as opened on large screens
@@ -32,12 +34,14 @@ export default function HomeLayout({
   return (
     <>
       {/* <WorkInProgressWarningBar /> */}
-      <Box w="100vw" margin={0} padding={0}>
+      <Box w="100%" margin={0} padding={0} overflowX="hidden">
         {isOpen ? (
           <NavBar
+            backgroundColor="white"
             disclosure={navBarDisclosure}
             isMobile={!isLargerThan800}
-            width="15em"
+            position="fixed"
+            width={navbarWidth}
             display="inline-block"
             verticalAlign="top"
           >
@@ -80,14 +84,19 @@ export default function HomeLayout({
             onClick={onOpen}
           />
         )}
-        <Box
-          width={isOpen && isLargerThan800 ? "calc(100vw - 15em)" : "100vw"}
-          display="inline-block"
-          verticalAlign="top"
-          overflow="hidden"
-        >
-          <main>{children}</main>
-        </Box>
+        <HStack margin={0} padding={0} justifyContent="flex-end">
+          <Box
+            width={
+              isOpen && isLargerThan800
+                ? `calc(100% - ${navbarWidth})`
+                : "100vw"
+            }
+            display={isMobileNavBarVisible ? "none" : "inline-block"}
+            verticalAlign="top"
+          >
+            <main>{children}</main>
+          </Box>
+        </HStack>
       </Box>
     </>
   );

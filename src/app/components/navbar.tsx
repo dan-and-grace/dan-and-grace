@@ -25,12 +25,12 @@ export default function NavBar({
         initial={false}
         onAnimationStart={() => setHidden(false)}
         onAnimationComplete={() => setHidden(!isOpen)}
-        animate={{ width: isOpen ? "100vw" : 0 }}
+        animate={{ width: isOpen ? "100%" : 0 }}
         style={{
           background: "white",
           overflow: "hidden",
           whiteSpace: "nowrap",
-          position: "absolute",
+          position: "fixed",
           left: "0",
           height: "100vh",
           top: "0",

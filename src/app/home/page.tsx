@@ -1,8 +1,14 @@
 import * as React from "react";
-import { Alert, AlertIcon, Box, HStack, Text } from "@chakra-ui/react";
 import HomeSection from "../components/homeSection";
-import NavBar from "../components/navbar";
+import TravelSection from "../components/travelSection";
+import { Divider } from "@chakra-ui/react";
 
 export default function Page() {
-  return <HomeSection />;
+  return (
+    <>
+      <HomeSection />
+      <Divider />
+      <TravelSection />
+    </>
+  );
 }

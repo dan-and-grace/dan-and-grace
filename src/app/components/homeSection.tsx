@@ -1,9 +1,16 @@
 import { Heading, Image, VStack, Text } from "@chakra-ui/react";
+import Section, { SectionProps } from "./section";
 
 // TODO: Update home section to no longer be save the date contents
-export default function HomeSection() {
+export default function HomeSection(props: SectionProps) {
   return (
-    <VStack height="100vh" justifyContent="center" textAlign="center">
+    <Section
+      {...props}
+      height="100vh"
+      justifyContent="center"
+      textAlign="center"
+      m="0"
+    >
       <Image
         maxH="50vh"
         minW={750}
@@ -24,6 +31,6 @@ export default function HomeSection() {
         <Text fontSize="xl">Carlton, Nottingham, UK</Text>
         <Text>Invitations & updates on this website to come!</Text>
       </VStack>
-    </VStack>
+    </Section>
   );
 }

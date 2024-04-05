@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import NavBar from "../components/navbar";
+import { config } from "./page";
 
 export default function HomeLayout({
   children,
@@ -57,20 +58,18 @@ export default function HomeLayout({
               />
             </HStack>
             <VStack padding="2em">
-              <VStack gap={0}>
-                <Text fontWeight={600}>the wedding of</Text>
-                <Text fontSize="2xl" fontWeight={700}>
-                  Dan & Grace
-                </Text>
-              </VStack>
+              <Link href={`#${config.home.name}`}>
+                <VStack gap={0}>
+                  <Text fontWeight={600}>the wedding of</Text>
+                  <Text fontSize="2xl" fontWeight={700}>
+                    Dan & Grace
+                  </Text>
+                </VStack>
+              </Link>
               <Divider marginBottom="1em" />
-              {/* TODO: Slowly reveal different sections */}
-              {/* <Link>Location</Link> */}
-              {/* <Link>Schedule</Link> */}
-              <Link>Travel</Link>
-              <Link>Accomodation</Link>
-              <Link>Nottingham</Link>
-              <Link>Q & A</Link>
+              {config.sections.map((props) => {
+                return <Link href={`#${props.name}`}>{props.name}</Link>;
+              })}
             </VStack>
           </NavBar>
         ) : (

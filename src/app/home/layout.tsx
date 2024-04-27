@@ -25,13 +25,6 @@ export default function HomeLayout({
   const navbarWidth = "15em";
   const isMobileNavBarVisible = isOpen && !isLargerThan800;
 
-  useEffect(() => {
-    // Default navbar menu as opened on large screens
-    if (isLargerThan800) {
-      onOpen();
-    }
-  }, [isLargerThan800]);
-
   return (
     <>
       {/* <WorkInProgressWarningBar /> */}
@@ -68,16 +61,21 @@ export default function HomeLayout({
               </Link>
               <Divider marginBottom="1em" />
               {config.sections.map((props) => {
-                return <Link href={`#${props.name}`}>{props.name}</Link>;
+                return (
+                  <Link key={props.name} href={`#${props.name}`}>
+                    {props.name}
+                  </Link>
+                );
               })}
             </VStack>
           </NavBar>
         ) : (
           <IconButton
+            bgColor="white"
             variant="ghost"
             margin="0.5rem"
             size="lg"
-            position="absolute"
+            position="fixed"
             aria-label="Expand navigation menu"
             icon={<HamburgerIcon />}
             onClick={onOpen}

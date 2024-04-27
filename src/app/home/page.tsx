@@ -1,9 +1,13 @@
 import * as React from "react";
 import HomeSection from "../components/homeSection";
 import TravelSection from "../components/travelSection";
-import { Divider } from "@chakra-ui/react";
+import { Divider, VStack } from "@chakra-ui/react";
 import AccomodationSection from "../components/accomodationSection";
 import { SectionProps } from "../components/section";
+import LocationSection from "../components/locationSection";
+import ScheduleSection from "../components/scheduleSection";
+import CeremonySection from "../components/ceremonySection";
+import ReceptionSection from "../components/receptionSection";
 
 interface SectionConfig {
   name: string;
@@ -21,14 +25,14 @@ export const config: PageConfig = {
     component: HomeSection,
   },
   sections: [
-    // {
-    //   name: "Location",
-    //   component: TravelSection,
-    // },
-    // {
-    //   name: "Schedule",
-    //   component: AccomodationSection,
-    // },
+    {
+      name: "Ceremony",
+      component: CeremonySection,
+    },
+    {
+      name: "Reception",
+      component: ReceptionSection,
+    },
     {
       name: "Travel",
       component: TravelSection,
@@ -54,10 +58,10 @@ export default function Page() {
       <config.home.component name={config.home.name} />
       {config.sections.map((props) => {
         return (
-          <>
+          <VStack key={props.name}>
             <Divider />
             <props.component name={props.name} />
-          </>
+          </VStack>
         );
       })}
     </>

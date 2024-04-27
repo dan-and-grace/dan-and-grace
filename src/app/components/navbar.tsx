@@ -43,7 +43,7 @@ export default function NavBar({
     <Box
       top={0}
       height="100vh"
-      borderRightWidth="1px"
+      borderRightWidth="3px"
       borderRightStyle="solid"
       borderRightColor="black"
       {...props}

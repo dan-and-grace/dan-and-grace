@@ -1,13 +1,14 @@
+import { VStack } from "@chakra-ui/react";
 import * as React from "react";
-import HomeSection from "../components/homeSection";
-import TravelSection from "../components/travelSection";
-import { Divider, VStack } from "@chakra-ui/react";
-import AccomodationSection from "../components/accomodationSection";
 import { SectionProps } from "../components/section";
-import LocationSection from "../components/locationSection";
-import ScheduleSection from "../components/scheduleSection";
-import CeremonySection from "../components/ceremonySection";
-import ReceptionSection from "../components/receptionSection";
+import AccomodationSection from "../sections/accomodationSection";
+import CeremonySection from "../sections/ceremonySection";
+import HomeSection from "../sections/homeSection";
+import NottsGuideSection from "../sections/nottsGuideSection";
+import QnASection from "../sections/qnaSection";
+import ReceptionSection from "../sections/receptionSection";
+import RsvpSection from "../sections/rsvpSection";
+import TravelSection from "../sections/travelSection";
 
 interface SectionConfig {
   name: string;
@@ -19,12 +20,17 @@ interface PageConfig {
   sections: SectionConfig[];
 }
 
-export const config: PageConfig = {
+export const pageConfig: PageConfig = {
   home: {
     name: "home",
     component: HomeSection,
   },
   sections: [
+    // This section is hidden until we are ready for RSVPs
+    // {
+    //   name: "RSVP",
+    //   component: RsvpSection,
+    // },
     {
       name: "Ceremony",
       component: CeremonySection,
@@ -41,25 +47,24 @@ export const config: PageConfig = {
       name: "Accomodation",
       component: AccomodationSection,
     },
-    // {
-    //   name: "Nottingham",
-    //   component: AccomodationSection,
-    // },
-    // {
-    //   name: "Q & A",
-    //   component: AccomodationSection,
-    // },
+    {
+      name: "Nottingham Guide",
+      component: NottsGuideSection,
+    },
+    {
+      name: "FAQs",
+      component: QnASection,
+    },
   ],
 };
 
 export default function Page() {
   return (
     <>
-      <config.home.component name={config.home.name} />
-      {config.sections.map((props) => {
+      <pageConfig.home.component name={pageConfig.home.name} />
+      {pageConfig.sections.map((props) => {
         return (
           <VStack key={props.name}>
-            <Divider />
             <props.component name={props.name} />
           </VStack>
         );

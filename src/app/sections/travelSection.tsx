@@ -1,18 +1,16 @@
-import { Heading, VStack, Text, Container } from "@chakra-ui/react";
-import Link from "./Link";
-import Section, { SectionProps } from "./section";
+import { Heading, VStack, Text, Container, Button } from "@chakra-ui/react";
+import Link from "../components/link";
+import Section, { SectionProps } from "../components/section";
+import SectionHeading from "../components/sectionHeading";
+import SectionSubHeading from "../components/sectionSubHeading";
 
 export default function TravelSection(props: SectionProps) {
   return (
     <Section {...props}>
       <Container maxW="container.sm">
         <VStack fontWeight={400} textAlign="left" gap="1em">
-          <Heading as="h2" fontSize="3xl" fontWeight={700}>
-            TRAVEL
-          </Heading>
-          <Heading as="h3" fontSize="2xl">
-            Getting to Nottingham
-          </Heading>
+          <SectionHeading>{props.name}</SectionHeading>
+          <SectionSubHeading>Getting to Nottingham</SectionSubHeading>
           <Text>
             If you're coming from out of the UK, we recommend you fly into
             airports in London. Your best bet would be Heathrow Airport.
@@ -48,18 +46,27 @@ export default function TravelSection(props: SectionProps) {
             </Link>
             , and <Link href="https://www.flixbus.co.uk/">FlixBus</Link>.
           </Text>
-          <Heading as="h3" fontSize="2xl">
-            Local transportation
-          </Heading>
+          <SectionSubHeading>Getting to the church</SectionSubHeading>
           <Text>
-            Nottingham has <Link href="https://www.nctx.co.uk/">buses</Link> and
-            taxis. If you want to get book a taxi, we would recommend using{" "}
+            The church has a carpark. Nottingham has{" "}
+            <Link href="https://www.nctx.co.uk/">buses</Link> and taxis. If you
+            want to get a taxi, we would recommend using and booking{" "}
             <Link href="https://dgcars.co.uk/">DG Cars</Link> by calling them or
-            using their app, or using the{" "}
+            using their app.{" "}
             <Link href="https://www.uber.com/gb/en/r/cities/taxi/nottingham-eng-gb/">
               Uber
             </Link>{" "}
-            app.
+            is also an option in Nottingham.
+          </Text>
+          <SectionSubHeading>
+            Getting from the church to the reception
+          </SectionSubHeading>
+          <Text>
+            The reception venue is a 15-minute-ish walk from the church (
+            <Link href="https://maps.app.goo.gl/VnUegRTyczGbAT8W6">
+              open directions in Google Maps
+            </Link>
+            ). The venue also has a carpark.
           </Text>
         </VStack>
       </Container>

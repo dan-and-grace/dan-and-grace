@@ -2,8 +2,14 @@ import { Heading, Image, VStack, Text } from "@chakra-ui/react";
 
 export default function SaveTheDatePage() {
   return (
-    <main className="flex flex-col items-center justify-center h-full overflow-hidden">
-      <VStack p={3} w="100vw" textAlign="center">
+    <main>
+      <VStack
+        p={3}
+        w="100vw"
+        textAlign="center"
+        h="100vh"
+        justifyContent="center"
+      >
         <Image
           maxH="50vh"
           minW={750}

@@ -6,6 +6,8 @@ export default function Link(props: LinkProps) {
       textDecoration="underline"
       textUnderlineOffset="0.1em"
       rel="noopener noreferrer"
+      textColor="brand.700"
+      fontWeight={700}
       {...props}
     />
   );

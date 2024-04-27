@@ -8,9 +8,12 @@ export default function Section({ name, ...props }: SectionProps) {
   return (
     <VStack
       justifyContent="center"
-      mt="5em"
-      mb="5em"
+      pt="5em"
+      pb="5em"
       id={name}
+      width="100%"
+      borderTopColor="black.500"
+      borderTopWidth={1}
       {...props}
     ></VStack>
   );

@@ -11,10 +11,11 @@ import {
   VStack,
   useDisclosure,
   useMediaQuery,
+  Image,
 } from "@chakra-ui/react";
-import { useEffect } from "react";
 import NavBar from "../components/navbar";
-import { config } from "./page";
+import { pageConfig } from "./page";
+import { useEffect, useState } from "react";
 
 export default function HomeLayout({
   children,
@@ -24,6 +25,12 @@ export default function HomeLayout({
   const { isOpen, onOpen, onClose } = navBarDisclosure;
   const navbarWidth = "15em";
   const isMobileNavBarVisible = isOpen && !isLargerThan800;
+
+  useEffect(() => {
+    if (isLargerThan800) {
+      onOpen();
+    }
+  }, [isLargerThan800]);
 
   return (
     <>
@@ -46,25 +53,38 @@ export default function HomeLayout({
                 variant="ghost"
                 margin="0.5rem"
                 aria-label="Expand navigation menu"
-                icon={<CloseIcon />}
+                icon={<CloseIcon fontSize="xl" />}
                 onClick={onClose}
               />
             </HStack>
             <VStack padding="2em">
-              <Link href={`#${config.home.name}`}>
-                <VStack gap={0}>
-                  <Text fontWeight={600}>the wedding of</Text>
+              <Link href={`#${pageConfig.home.name}`}>
+                <VStack gap="0.5em">
+                  <Image
+                    width="3em"
+                    m="auto"
+                    objectFit="cover"
+                    src="daisy_doodle.svg"
+                    alt="Digital drawing of a daisy"
+                  />
                   <Text fontSize="2xl" fontWeight={700}>
                     Dan & Grace
                   </Text>
                 </VStack>
               </Link>
               <Divider marginBottom="1em" />
-              {config.sections.map((props) => {
+              {pageConfig.sections.map((props) => {
                 return (
-                  <Link key={props.name} href={`#${props.name}`}>
-                    {props.name}
-                  </Link>
+                  <>
+                    <Link
+                      fontWeight={600}
+                      key={props.name}
+                      href={`#${props.name}`}
+                      _hover={{ color: "brand.700" }}
+                    >
+                      {props.name}
+                    </Link>
+                  </>
                 );
               })}
             </VStack>
@@ -75,9 +95,12 @@ export default function HomeLayout({
             variant="ghost"
             margin="0.5rem"
             size="lg"
+            borderRadius={0}
+            borderWidth={3}
+            borderColor="black"
             position="fixed"
             aria-label="Expand navigation menu"
-            icon={<HamburgerIcon />}
+            icon={<HamburgerIcon fontSize="2xl" />}
             onClick={onOpen}
           />
         )}

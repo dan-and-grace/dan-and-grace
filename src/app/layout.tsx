@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Providers } from "./providers";
-import { fonts } from "./fonts";
-import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Dan & Grace",
@@ -12,7 +10,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`h-full ${fonts.rubik.variable}`}>
+    <html lang="en">
       <head>
         {/* Favicon */}
         <link rel="shortcut icon" href="/images/favicon/favicon.ico" />

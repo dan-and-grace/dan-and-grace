@@ -106,20 +106,14 @@ const QnAs: {
   },
   {
     q: "What about wedding presents?",
-    a: (
-      <Text>
-        We will be collecting donations for INSERT-CHARITY-NAME-HERE in lieu of
-        gifts, please consider donating HERE if you feel able.
-      </Text>
-    ),
+    a: <Text>We will be update information about this at a closer date.</Text>,
   },
   {
     q: "Is it ok to take pictures during the wedding?",
     a: (
       <Text>
-        Definitely! It would be great if you shared them too into this shared
-        Google Drive folder. For your convenience, you can also WhatsApp them to
-        us and we can add them to the shared folder.
+        Definitely! It would be great if you shared them too. We will provide
+        more information on how to share your photos at a closer date.
       </Text>
     ),
   },

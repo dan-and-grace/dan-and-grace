@@ -3,6 +3,7 @@ import Link from "../components/link";
 import Section, { SectionProps } from "../components/section";
 import SectionHeading from "../components/sectionHeading";
 import SectionSubHeading from "../components/sectionSubHeading";
+import SectionSubSubHeading from "../components/sectionSubSubHeading";
 
 export default function TravelSection(props: SectionProps) {
   return (
@@ -10,36 +11,24 @@ export default function TravelSection(props: SectionProps) {
       <Container maxW="container.sm">
         <VStack fontWeight={400} textAlign="left" gap="1em">
           <SectionHeading>{props.name}</SectionHeading>
-          <SectionSubHeading>Getting to Nottingham</SectionSubHeading>
+          <SectionSubHeading>
+            For those arriving from outside the UK
+          </SectionSubHeading>
           <Text>
-            If you're coming from out of the UK, we recommend you fly into
-            airports in London. Your best bet would be Heathrow Airport.
+            We recommend that you fly to Heathrow Airport then take a National
+            Rail train from St Pancras station to Nottingham. You can get to St
+            Pancras station using the London Underground.
           </Text>
           <Text>
-            From the airports in London, there are broadly two ways to get to
-            Nottingham: (1) By getting to a train station and then taking a
-            train to Nottingham, or (2) by getting to a coach station and then
-            taking a coach to Nottingham.
-          </Text>
-          <Text>
-            Taking a train to Nottingham train station is usually the fastest,
-            and most straightforward option. It is the one that{" "}
-            <Link href="https://www.google.com/maps">Google Maps</Link> will
-            suggest. We normally use{" "}
+            Try to book your National Rail tickets as far in advance as
+            possible, as these can get expensive otherwise. You can use{" "}
             <Link href="https://www.thetrainline.com/">Trainline</Link> to book
-            train tickets. Some journeys will require you to change trains.
-            Train services can get interrupted (e.g. by train strikes) so be
-            sure to check the train service online before you travel. For
-            cheaper train tickets, we recommend you read{" "}
-            <Link href="https://www.moneysavingexpert.com/travel/cheap-train-tickets/">
-              this article
-            </Link>{" "}
-            for tips.
+            your tickets.
           </Text>
           <Text>
-            Taking a coach to Nottingham is usually more economical than the
-            train, but it also takes longer. If you would like to take a coach,
-            we checking out these coach providers:{" "}
+            As an alternative, it can be cheaper to take a coach instead of the
+            train, although this is less straightforward and will take longer.
+            These are the main coach providers in the UK: providers:{" "}
             <Link href="https://uk.megabus.com/">Megabus</Link>,{" "}
             <Link href="https://www.nationalexpress.com/en">
               National Express
@@ -48,25 +37,40 @@ export default function TravelSection(props: SectionProps) {
           </Text>
           <SectionSubHeading>Getting to the church</SectionSubHeading>
           <Text>
-            The church has a carpark. Nottingham has{" "}
-            <Link href="https://www.nctx.co.uk/">buses</Link> and taxis. If you
-            want to get a taxi, we would recommend using and booking{" "}
-            <Link href="https://dgcars.co.uk/">DG Cars</Link> by calling them or
-            using their app.{" "}
+            <strong>By Car 🚗 - </strong> The church has approximately 45
+            parking spaces. Other parking options are Carlton Hill Tesco, 2
+            Standhill Road, or the Reception venue which is approximately 15
+            minutes&apos; walk away. If using the church car park, please move
+            your car to the reception venue after the service as the church will
+            have other bookings later in the day.
+          </Text>
+          <Text>
+            <strong>By Taxi 🚕 - </strong> We recommend the local company{" "}
+            <Link href="https://dgcars.co.uk/">DG Cars</Link>, who can be booked
+            by phone or using their app. Alternatively,{" "}
             <Link href="https://www.uber.com/gb/en/r/cities/taxi/nottingham-eng-gb/">
               Uber
             </Link>{" "}
-            is also an option in Nottingham.
+            is available in Nottingham.
           </Text>
-          <SectionSubHeading>
-            Getting from the church to the reception
-          </SectionSubHeading>
           <Text>
-            The reception venue is a 15-minute-ish walk from the church (
+            <strong>By Public Transport 🚌 - </strong>If travelling from
+            Nottingham City centre, buses 25, 26, and 27 stop near the church.
+          </Text>
+          <SectionSubHeading>Getting to the reception</SectionSubHeading>
+          <Text>
+            <strong>On foot 👣 - </strong>The reception venue is approximately a
+            15-minute&apos; walk from the church (
             <Link href="https://maps.app.goo.gl/VnUegRTyczGbAT8W6">
               open directions in Google Maps
             </Link>
-            ). The venue also has a carpark.
+            ).
+          </Text>
+          <Text>
+            <strong>By Car 🚗 - </strong>The venue has plenty of parking
+            available. As above, if you park in the church car park for the
+            ceremony please drive to the reception venue afterwards as the
+            church will need their car park for another booking.
           </Text>
         </VStack>
       </Container>

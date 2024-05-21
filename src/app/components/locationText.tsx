@@ -20,7 +20,7 @@ const LocationText = ({
 }: LocationTextProps) => {
   const handleOpenMaps = useCallback(() => {
     window.location.href = googleMapsUrl;
-  }, []);
+  }, [googleMapsUrl]);
   return (
     <VStack gap={5}>
       <VStack gap={0}>

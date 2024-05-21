@@ -6,7 +6,7 @@ export default function WorkInProgressWarningBar() {
       <HStack width="100%" justifyContent="center">
         <AlertIcon />
         <Text>
-          Please don't rely on any information shown here. This page is a work
+          Please do not rely on any information shown here. This page is a work
           in progress.
         </Text>
       </HStack>

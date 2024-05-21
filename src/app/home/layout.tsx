@@ -6,16 +6,16 @@ import {
   Divider,
   HStack,
   IconButton,
-  Link,
   Text,
   VStack,
   useDisclosure,
   useMediaQuery,
   Image,
+  Link,
+  Button,
 } from "@chakra-ui/react";
 import NavBar from "../components/navbar";
 import { pageConfig } from "./page";
-import { useEffect, useState } from "react";
 
 export default function HomeLayout({
   children,
@@ -26,12 +26,15 @@ export default function HomeLayout({
   const navbarWidth = "15em";
   const isMobileNavBarVisible = isOpen && !isLargerThan800;
 
-  useEffect(() => {
-    if (isLargerThan800) {
-      onOpen();
-    }
-  }, [isLargerThan800]);
-
+  const handlePageClick = (pageAnchor: string) => {
+    return () => {
+      const parts = window.location.href.split("#");
+      window.location.href = parts[0] + `#${pageAnchor}`;
+      if (!isLargerThan800) {
+        onClose();
+      }
+    };
+  };
   return (
     <>
       {/* <WorkInProgressWarningBar /> */}
@@ -75,16 +78,16 @@ export default function HomeLayout({
               <Divider marginBottom="1em" />
               {pageConfig.sections.map((props) => {
                 return (
-                  <>
-                    <Link
-                      fontWeight={600}
-                      key={props.name}
-                      href={`#${props.name}`}
-                      _hover={{ color: "brand.700" }}
-                    >
-                      {props.name}
-                    </Link>
-                  </>
+                  <Button
+                    variant="brand"
+                    fontWeight={600}
+                    height="fit-content"
+                    key={props.name}
+                    onClick={handlePageClick(props.name)}
+                    _hover={{ color: "brand.700" }}
+                  >
+                    {props.name}
+                  </Button>
                 );
               })}
             </VStack>

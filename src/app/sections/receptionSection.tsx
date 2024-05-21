@@ -1,35 +1,38 @@
-import { Container, Image, VStack, Text } from "@chakra-ui/react";
+import { Button, Image, Text, VStack } from "@chakra-ui/react";
 import LocationText from "../components/locationText";
 import Section, { SectionProps } from "../components/section";
-import SectionHeading from "../components/sectionHeading";
+import TwoColSectionLayout from "../components/twoColSectionLayout";
 
 export default function ReceptionSection(props: SectionProps) {
   return (
     <Section {...props}>
-      <Container maxW="container.sm">
-        <VStack fontWeight={400} textAlign="left" gap="1em">
-          <SectionHeading>{props.name}</SectionHeading>
-          <Text textAlign="center">
-            Food will be served at around 2pm, followed by speeches, sweet
-            things, music, and dancing. Remember to bring or wear some comfy
-            shoes!
-          </Text>
+      <TwoColSectionLayout
+        sectionName={props.name}
+        left={
           <Image
-            width="100%"
+            height="100%"
             objectFit="cover"
             src="richard_herrod.svg"
             alt="Digital drawing of Richard Herrod Centre"
           />
-          <LocationText
-            name="Richard Herrod Centre"
-            address="Foxhill Rd, Carlton, Nottingham NG4 1RL"
-            googleMapsUrl="https://maps.app.goo.gl/zvSumVdHfDPBo7PL6"
-            url="https://www.gedling.gov.uk/leisure/ourcentres/richardherrodcentre/"
-          >
-            <Text>(~15 minutes walk from the church)</Text>
-          </LocationText>
-        </VStack>
-      </Container>
+        }
+        right={
+          <VStack justifyContent="center" gap="1em">
+            <LocationText
+              name="Richard Herrod Centre"
+              address="Foxhill Rd, Carlton, Nottingham NG4 1RL"
+              googleMapsUrl="https://maps.app.goo.gl/zvSumVdHfDPBo7PL6"
+            >
+              <Text>(~15 minutes walk from the church)</Text>
+            </LocationText>
+            <Text textAlign="center">
+              Food will be served at around 2pm,
+              <br /> followed by speeches, music, and dancing.
+            </Text>
+            <Button isDisabled>Menu Preview: Coming soon!</Button>
+          </VStack>
+        }
+      />
     </Section>
   );
 }

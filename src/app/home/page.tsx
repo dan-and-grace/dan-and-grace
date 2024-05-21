@@ -7,8 +7,8 @@ import HomeSection from "../sections/homeSection";
 import NottsGuideSection from "../sections/nottsGuideSection";
 import QnASection from "../sections/qnaSection";
 import ReceptionSection from "../sections/receptionSection";
-import RsvpSection from "../sections/rsvpSection";
 import TravelSection from "../sections/travelSection";
+import InvitationsComingSoonSection from "../sections/invitationsComingSoonSection";
 
 interface SectionConfig {
   name: string;
@@ -31,6 +31,10 @@ export const pageConfig: PageConfig = {
     //   name: "RSVP",
     //   component: RsvpSection,
     // },
+    {
+      name: "Invitations coming soon!",
+      component: InvitationsComingSoonSection,
+    },
     {
       name: "Ceremony",
       component: CeremonySection,

@@ -5,9 +5,9 @@ import { useCallback } from "react";
 import Section, { SectionProps } from "../components/section";
 import SectionHeading from "../components/sectionHeading";
 
-export default function RsvpSection(props: SectionProps) {
-  const rsvpHandler = useCallback(() => {
-    // TODO: Send to RSVP Form
+export default function InvitationsComingSoonSection(props: SectionProps) {
+  const updateContactDetails = useCallback(() => {
+    window.location.href = "https://forms.gle/beXMnG23gPAuAUY17";
   }, []);
   return (
     <Section
@@ -21,23 +21,20 @@ export default function RsvpSection(props: SectionProps) {
         <VStack fontWeight={400} alignContent="center" alignItems="center">
           <SectionHeading>{props.name}</SectionHeading>
           <VStack gap="1em">
-            <VStack gap={0}>
-              <Text fontSize="lg">
-                We&apos;re so excited to see you! Hope you can make it!
+            <VStack gap={0} textAlign="center">
+              <Text>
+                We&apos;ll be sending invitations either by post/email.
               </Text>
-              <Text fontSize="lg">
-                Please let us know by the <strong>15th March 2025</strong>.
-              </Text>
+              <Text>To update your details, you can do so here:</Text>
             </VStack>
             <Button
               _hover={{
                 backgroundColor: "#fff9e0",
               }}
               backgroundColor="white"
-              onClick={rsvpHandler}
-              fontSize="xl"
+              onClick={updateContactDetails}
             >
-              RSVP
+              Update Contact Details
             </Button>
           </VStack>
         </VStack>

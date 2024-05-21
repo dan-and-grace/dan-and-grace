@@ -1,91 +1,73 @@
-import { VStack, Text, Container } from "@chakra-ui/react";
+import {
+  VStack,
+  Text,
+  Container,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionIcon,
+  Box,
+  AccordionPanel,
+  Image,
+} from "@chakra-ui/react";
 import Section, { SectionProps } from "../components/section";
 import SectionHeading from "../components/sectionHeading";
 import { ReactNode } from "react";
-import SectionSubHeading from "../components/sectionSubHeading";
 
 const QnAs: {
   q: string;
   a: ReactNode;
 }[] = [
   {
-    q: "Aren't you already married?",
+    q: "Didn't you already get married?",
     a: (
       <>
-        <Text>
-          Yes, we were legally married in 2020 during COVID and had a small
-          legal ceremony.
+        <Text mb="1em">
+          Yes! Our engagement happened in 2019 and we were originally planning
+          for two wedding ceremonies in 2020: a civil ceremony in Hong Kong and
+          church ceremony in the UK. These plans had to be cancelled due to the
+          pandemic, but we were able to hold a very small civil ceremony on 10th
+          May 2020, exactly five years before our newly planned church ceremony!
+          We are so glad that we&apos;ll finally be able to celebrate with all
+          our loved ones, better late than never!
         </Text>
-        <Text>
-          Though it was during COVID, regardless of whether it had been COVID,
-          we were planning to legally marry in Hong Kong anyway. This is due to
-          the relatively long and expensive process we would have to otherwise
-          do if we were to legally marry in the UK when we were staying in Hong
-          Kong. For example, Grace would have had to apply for a special
-          marriage visa and pay an extra 115 GBP.
-        </Text>
-        <Text>
-          Now that COVID is over and we are back in the UK, we wanted to
-          celebrate our wedding and get together with loved ones as we
-          originally planned.
-        </Text>
+        <Image
+          width="100%"
+          borderRadius="1em"
+          m="auto"
+          objectFit="contain"
+          src="covid_wedding.JPG"
+          alt="Dan and Grace holding their marriage certificate with their mask on outside the City Hall Marriage Registry in Hong Kong during COVID-19"
+        />
       </>
-    ),
-  },
-  {
-    q: "Are children or plus ones allowed?",
-    a: (
-      <Text>
-        We tried to include all possible children/+1s in the invitation. If you
-        had anyone else you wanted to celebrate the day with, please feel free
-        to contact us before the RSVP date about it! We can try and squeeze them
-        in if possible.
-      </Text>
     ),
   },
   {
     q: "What is the dress code?",
     a: (
       <Text>
-        Dress for a wedding and dress for comfort. We recommend bringing/wearing
-        comfortable shoes if you want to dance!
+        Formal but comfortable, don&apos;t forget comfortable shoes if you want
+        to dance!
       </Text>
     ),
   },
   {
-    q: "Is dinner included?",
+    q: "What time will it finish?",
     a: (
       <Text>
-        I'm afraid not. We won't be offended if you decided to leave early to
-        get dinner. It is a looong day! Feel free to leave as early as you feel
-        comfortable, there is no pressure to stay. I imagine we'll want some
-        quiet time towards the end of the day anyway.
+        We have the venue booked until 6.30pm, please stay as long or as short
+        as you&apos;d like!
       </Text>
     ),
   },
   {
-    q: "What about wedding presents?",
+    q: "What food will be served?",
     a: (
       <Text>
-        GIVE US ALLL YOUR MONNNEEEYYY :P Nah, we're good. Donate here if you
-        want to give something.
-      </Text>
-    ),
-  },
-  {
-    q: "Where are you guys going for honeymoon?",
-    a: (
-      <Text>
-        Ummm... Not sure yet to be honest. Trying to save for a house hehe.
-      </Text>
-    ),
-  },
-  {
-    q: "You have an amazing looking website! Who made it?",
-    a: (
-      <Text>
-        Why, what a wonderful thing to ask! You lovely person! We did (mostly
-        Grace)! Thank you!
+        We&apos;ll be having a buffet-style meal at around 2pm where there will
+        be lots of food to choose from! We will provide a preview of the menu at
+        a closer date. We&apos;re sorry though that we won&apos;t be able to
+        provide an evening meal.
       </Text>
     ),
   },
@@ -99,26 +81,71 @@ const QnAs: {
     ),
   },
   {
-    q: "Is the wedding indoors or outdoors?",
-    a: <Text>Indoors! We didn't want to leave the weather for chance!</Text>,
+    q: "Is the reception venue indoors?",
+    a: <Text>Yes!</Text>,
+  },
+  {
+    q: "Will there be quiet space available?",
+    a: (
+      <Text>
+        Yes, there will be a conference room made available outside the
+        reception room which will be available for those who want some quiet
+        time.
+      </Text>
+    ),
+  },
+  {
+    q: "Is there space for plus-ones?",
+    a: (
+      <Text>
+        If there are additional people you wish to bring please get in touch
+        with us before the RSVP date and we&apos;ll do our best to include them
+        if possible.
+      </Text>
+    ),
+  },
+  {
+    q: "What about wedding presents?",
+    a: (
+      <Text>
+        We will be collecting donations for INSERT-CHARITY-NAME-HERE in lieu of
+        gifts, please consider donating HERE if you feel able.
+      </Text>
+    ),
   },
   {
     q: "Is it ok to take pictures during the wedding?",
     a: (
       <Text>
-        Definitely! It would be great if you shared them too into this Google
-        Drive.
+        Definitely! It would be great if you shared them too into this shared
+        Google Drive folder. For your convenience, you can also WhatsApp them to
+        us and we can add them to the shared folder.
       </Text>
     ),
   },
   {
-    q: "My question hasn't been answered. How can I contact you about them?",
+    q: "I am coming from overseas, how long should I stay in the UK?",
     a: (
-      <Text>
-        Definitely! It would be great if you shared them too into this Google
-        Drive.
-      </Text>
+      <>
+        <Text>
+          Thank you for coming such a long way to see us! Nottingham has enough
+          sights to see for about a day or two, but you may wish to visit other
+          cities during your time in the UK. Please do get in touch with us if
+          you&apos;d like any advice about places you can travel to.
+        </Text>
+        <Text>
+          If you would like to plan some time to meet with us outside of the
+          wedding day, please don&apos;t hesitate to contact us about that as
+          well. If it helps, we plan to take the week before and after our
+          wedding day off to prepare and recover, and it would be lovely to see
+          you during that time.
+        </Text>
+      </>
     ),
+  },
+  {
+    q: "Where can I get more information?",
+    a: <Text>Please do not hesitate to contact us!</Text>,
   },
 ];
 
@@ -128,12 +155,21 @@ export default function QnASection(props: SectionProps) {
       <Container maxW="container.sm">
         <VStack fontWeight={400} textAlign="left" gap="1em">
           <SectionHeading>{props.name}</SectionHeading>
-          {QnAs.map((item, idx) => (
-            <VStack key={idx}>
-              <SectionSubHeading>{item.q}</SectionSubHeading>
-              {item.a}
-            </VStack>
-          ))}
+          <Accordion allowMultiple defaultIndex={[0]} width="100%">
+            {QnAs.map((item, idx) => (
+              <AccordionItem key={`faq-${idx}`} borderColor="#00916E">
+                <h2>
+                  <AccordionButton>
+                    <Box as="span" fontWeight={600} flex="1" textAlign="left">
+                      {item.q}
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>{item.a}</AccordionPanel>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </VStack>
       </Container>
     </Section>

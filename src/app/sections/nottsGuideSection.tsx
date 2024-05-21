@@ -1,6 +1,15 @@
-import { Container, VStack, Text, Tag, HStack } from "@chakra-ui/react";
+import {
+  Container,
+  VStack,
+  Text,
+  Tag,
+  HStack,
+  UnorderedList,
+  ListItem,
+} from "@chakra-ui/react";
 import Section, { SectionProps } from "../components/section";
 import SectionHeading from "../components/sectionHeading";
+import Link from "../components/link";
 
 enum TagTypes {
   ReachableByPublicTransport = "Public transport friendly",
@@ -15,79 +24,49 @@ interface TouristSpot {
   description: string;
   tags: string[];
   category: string;
+  price?: string;
   link?: string;
 }
 
 const nottSpots: TouristSpot[] = [
   {
-    name: "Nottingham City Centre",
-    description:
-      "One-liner description about this wonderful nottingham hotspot.",
-    tags: [TagTypes.ReachableByPublicTransport],
-    category: CategoryTypes.Attractions,
-  },
-  {
     name: "City of Caves",
-    description:
-      "One-liner description about this wonderful nottingham hotspot.",
+    description: "Nottingham's most unique attraction",
     tags: [TagTypes.ReachableByPublicTransport],
     category: CategoryTypes.Attractions,
-  },
-  {
-    name: "National Justice Museum",
-    description:
-      "One-liner description about this wonderful nottingham hotspot.",
-    tags: [TagTypes.ReachableByPublicTransport],
-    category: CategoryTypes.Attractions,
+    price: "£",
+    link: "https://www.nationaljusticemuseum.org.uk/cityofcaves",
   },
   {
     name: "Ye Olde Trip To Jerusalem",
-    description:
-      "One-liner description about this wonderful nottingham hotspot.",
+    description: "Working pub dating back to the 12th Century",
     tags: [TagTypes.ReachableByPublicTransport],
     category: CategoryTypes.Attractions,
+    link: "https://www.greeneking.co.uk/pubs/nottinghamshire/ye-olde-trip-to-jerusalem",
   },
   {
-    name: "Nottingham Castle",
-    description:
-      "One-liner description about this wonderful nottingham hotspot.",
+    name: "National Justice Museum",
+    description: "Housed in the city's Victorian courthouse and jail",
     tags: [TagTypes.ReachableByPublicTransport],
     category: CategoryTypes.Attractions,
-  },
-  {
-    name: "Nottingham Contemporary",
-    description:
-      "One-liner description about this wonderful nottingham hotspot.",
-    tags: [TagTypes.ReachableByPublicTransport],
-    category: CategoryTypes.Attractions,
-  },
-  {
-    name: "Rufford Abbey",
-    description:
-      "One-liner description about this wonderful nottingham hotspot.",
-    tags: [],
-    category: CategoryTypes.Attractions,
+    price: "££",
+    link: "https://www.nationaljusticemuseum.org.uk/museum",
   },
   {
     name: "Wollaton Hall",
-    description:
-      "One-liner description about this wonderful nottingham hotspot.",
+    description: "Beautiful stately home and grounds",
     tags: [TagTypes.ReachableByPublicTransport],
     category: CategoryTypes.Attractions,
+    price: "free",
+    link: "https://wollatonhall.org.uk/",
   },
   {
-    name: "Newstead Abbey",
-    description:
-      "One-liner description about this wonderful nottingham hotspot.",
-    tags: [],
+    name: "Nottingham Contemporary",
+    description: "Art gallery in the city center",
+    tags: [TagTypes.ReachableByPublicTransport],
     category: CategoryTypes.Attractions,
-  },
-  {
-    name: "Sherwood Forest Visitor Centre",
-    description:
-      "One-liner description about this wonderful nottingham hotspot.",
-    tags: [],
-    category: CategoryTypes.Attractions,
+    price: "free",
+    link: "https://www.nottinghamcontemporary.org/",
   },
 ];
 
@@ -95,27 +74,31 @@ export default function NottsGuideSection(props: SectionProps) {
   return (
     <Section {...props}>
       <Container maxW="container.sm">
-        <VStack fontWeight={400} textAlign="left" gap="1em">
+        <VStack fontWeight={400} textAlign="center" gap="1em">
           <SectionHeading>{props.name}</SectionHeading>
           <Text>
-            Nottingham is a city in the East Midlands area of England. Its
-            modern history dates back to the middle ages. Responsible for the
-            development of ibuprofen, the traffic light, and the MRI scanner.{" "}
+            If you are spending some time in Nottingham, here are some
+            recommendations!
           </Text>
-          {nottSpots.map((item) => (
-            <VStack textAlign="left">
-              <Text>
-                <strong>{item.name}</strong>
-              </Text>
-              <HStack>
-                <Tag>{item.category}</Tag>
-                {item.tags?.map((tag) => (
-                  <Tag>{tag}</Tag>
-                ))}
-              </HStack>
-              <Text>{item.description}</Text>
-            </VStack>
-          ))}
+          <UnorderedList textAlign="left">
+            {nottSpots.map((item) => (
+              <ListItem key={item.name}>
+                <Link href={item.link}>{item.name}</Link> |{" "}
+                {item.price ? `${item.price} |` : ""} {item.description}
+              </ListItem>
+            ))}
+          </UnorderedList>
+          <Text>
+            If you have your own car and don’t mind travelling further away, we
+            can suggest,{" "}
+            <Link href="https://ruffordabbey.co.uk/">Rufford Abbey</Link>,{" "}
+            <Link href="https://newsteadabbey.org.uk/">Newstead Abbey</Link>,
+            and{" "}
+            <Link href="https://www.visitsherwood.co.uk/">
+              Sherwood Forest Visitor Centre
+            </Link>
+            .
+          </Text>
         </VStack>
       </Container>
     </Section>

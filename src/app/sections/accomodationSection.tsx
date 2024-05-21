@@ -1,7 +1,36 @@
-import { Container, Text, VStack } from "@chakra-ui/react";
+import {
+  Container,
+  ListItem,
+  Text,
+  UnorderedList,
+  VStack,
+} from "@chakra-ui/react";
 import Link from "../components/link";
 import Section, { SectionProps } from "../components/section";
 import SectionHeading from "../components/sectionHeading";
+
+interface Accomodation {
+  name: string;
+  link: string;
+}
+const accomodationRecommendations: Accomodation[] = [
+  {
+    name: "Premier Inn Nottingham City Centre (Chapel Bar) hotel",
+    link: "https://maps.app.goo.gl/zWb1gSC1aox5RfhAA",
+  },
+  {
+    name: "Premier Inn Nottingham City Centre (Goldsmith Street) hotel",
+    link: "https://maps.app.goo.gl/EHyJ46thmdoL5jz17",
+  },
+  {
+    name: "Travelodge Nottingham Central",
+    link: "https://maps.app.goo.gl/weNSyyzaBZaLa5qG7",
+  },
+  {
+    name: "ibis Nottingham Centre",
+    link: "https://maps.app.goo.gl/RzL5o97aQYrdi4Kj8",
+  },
+];
 
 export default function AccomodationSection(props: SectionProps) {
   return (
@@ -19,12 +48,17 @@ export default function AccomodationSection(props: SectionProps) {
             .
           </Text>
           <Text>
-            Travelling within Nottinghamshire can take an hour or more and
-            public transport may not be convenient in all places, so we would
-            suggest considering your journeys to and from the wedding venue when
-            choosing a place to stay. Accomodations in Nottingham City, for
-            example, will probably have the best access to public transport.
+            If you will not be driving then we recommend staying in the
+            Nottingham City area as you will have access to public transport.
+            For example:
           </Text>
+          <UnorderedList>
+            {accomodationRecommendations.map((i) => (
+              <ListItem key={i.name}>
+                <Link href={i.link}>{i.name}</Link>
+              </ListItem>
+            ))}
+          </UnorderedList>
         </VStack>
       </Container>
     </Section>

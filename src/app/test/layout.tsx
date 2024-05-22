@@ -75,7 +75,7 @@ export default function HomeLayout({
                   </Text>
                 </VStack>
               </Link>
-              <Divider marginBottom="1em" />
+              <Divider marginBottom="1em" borderColor="green.500" />
               {pageConfiguration.sections.map((props) => {
                 return (
                   <Button

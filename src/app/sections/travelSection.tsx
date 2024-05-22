@@ -28,7 +28,7 @@ export default function TravelSection(props: SectionProps) {
           <Text>
             As an alternative, it can be cheaper to take a coach instead of the
             train, although this is less straightforward and will take longer.
-            These are the main coach providers in the UK: providers:{" "}
+            These are the main coach providers in the UK:{" "}
             <Link href="https://uk.megabus.com/">Megabus</Link>,{" "}
             <Link href="https://www.nationalexpress.com/en">
               National Express

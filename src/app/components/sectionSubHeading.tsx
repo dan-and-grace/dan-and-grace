@@ -9,7 +9,7 @@ export default function SectionSubHeading({
   children,
 }: SectionSubHeadingProps) {
   return (
-    <Heading as="h3" fontSize="2xl" pb={2} pt={3}>
+    <Heading as="h3" fontSize="2xl" pb={2} pt={3} textAlign="center">
       {children}
     </Heading>
   );

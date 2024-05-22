@@ -15,12 +15,12 @@ interface SectionConfig {
   component: React.ComponentType<SectionProps>;
 }
 
-interface PageConfig {
+interface PageConfiguration {
   home: SectionConfig;
   sections: SectionConfig[];
 }
 
-export const pageConfig: PageConfig = {
+export const pageConfiguration: PageConfiguration = {
   home: {
     name: "home",
     component: HomeSection,
@@ -65,8 +65,8 @@ export const pageConfig: PageConfig = {
 export default function Page() {
   return (
     <>
-      <pageConfig.home.component name={pageConfig.home.name} />
-      {pageConfig.sections.map((props) => {
+      <pageConfiguration.home.component name={pageConfiguration.home.name} />
+      {pageConfiguration.sections.map((props) => {
         return (
           <VStack key={props.name}>
             <props.component name={props.name} />

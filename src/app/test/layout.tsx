@@ -15,7 +15,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import NavBar from "../components/navbar";
-import { pageConfig } from "./page";
+import { pageConfiguration } from "./page";
 
 export default function HomeLayout({
   children,
@@ -61,7 +61,7 @@ export default function HomeLayout({
               />
             </HStack>
             <VStack padding="2em">
-              <Link href={`#${pageConfig.home.name}`}>
+              <Link href={`#${pageConfiguration.home.name}`}>
                 <VStack gap="0.5em">
                   <Image
                     width="3em"
@@ -76,7 +76,7 @@ export default function HomeLayout({
                 </VStack>
               </Link>
               <Divider marginBottom="1em" />
-              {pageConfig.sections.map((props) => {
+              {pageConfiguration.sections.map((props) => {
                 return (
                   <Button
                     variant="brand"

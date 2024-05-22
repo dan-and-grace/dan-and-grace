@@ -15,7 +15,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import NavBar from "../components/navbar";
-import { pageConfiguration } from "./page";
+import { pageConfiguration } from "./pageConfig";
 
 export default function HomeLayout({
   children,

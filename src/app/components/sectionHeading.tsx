@@ -7,7 +7,7 @@ interface SectionHeadingProps {
 
 export default function SectionHeading({ children }: SectionHeadingProps) {
   return (
-    <Heading as="h2" fontSize="3xl" fontWeight={700} pb={3}>
+    <Heading as="h2" fontSize="3xl" fontWeight={700} pb={3} textAlign="center">
       {children}
     </Heading>
   );

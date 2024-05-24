@@ -15,9 +15,9 @@ export default function TravelSection(props: SectionProps) {
             For those arriving from outside the UK
           </SectionSubHeading>
           <Text>
-            We recommend that you fly to Heathrow Airport then take a National
-            Rail train from St Pancras station to Nottingham. You can get to St
-            Pancras station using the London Underground.
+            We recommend that you fly to Heathrow Airport and then take a
+            National Rail train from St Pancras station to Nottingham. You can
+            get to St Pancras station using the London Underground.
           </Text>
           <Text>
             Try to book your National Rail tickets as far in advance as
@@ -46,8 +46,8 @@ export default function TravelSection(props: SectionProps) {
           </Text>
           <Text>
             <strong>By Taxi 🚕 - </strong> We recommend the local company{" "}
-            <Link href="https://dgcars.co.uk/">DG Cars</Link>, who can be booked
-            by phone or using their app. Alternatively,{" "}
+            <Link href="https://dgcars.co.uk/">DG Cars</Link> for booking by
+            phone or using their app. Alternatively,{" "}
             <Link href="https://www.uber.com/gb/en/r/cities/taxi/nottingham-eng-gb/">
               Uber
             </Link>{" "}
@@ -60,7 +60,7 @@ export default function TravelSection(props: SectionProps) {
           <SectionSubHeading>Getting to the reception</SectionSubHeading>
           <Text>
             <strong>On foot 👣 - </strong>The reception venue is approximately a
-            15-minute&apos; walk from the church (
+            15-minute walk from the church (
             <Link href="https://maps.app.goo.gl/VnUegRTyczGbAT8W6">
               open directions in Google Maps
             </Link>

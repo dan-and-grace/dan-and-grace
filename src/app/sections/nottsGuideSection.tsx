@@ -90,7 +90,7 @@ export default function NottsGuideSection(props: SectionProps) {
           </UnorderedList>
           <Text>
             If you have your own car and don’t mind travelling further away, we
-            can suggest,{" "}
+            can suggest{" "}
             <Link href="https://ruffordabbey.co.uk/">Rufford Abbey</Link>,{" "}
             <Link href="https://newsteadabbey.org.uk/">Newstead Abbey</Link>,
             and{" "}

@@ -48,7 +48,7 @@ export default function AccomodationSection(props: SectionProps) {
             .
           </Text>
           <Text>
-            If you will not be driving then we recommend staying in the
+            If you will not be driving, then we recommend staying in the
             Nottingham City area as you will have access to public transport.
             For example:
           </Text>

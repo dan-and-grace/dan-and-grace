@@ -25,11 +25,11 @@ const QnAs: {
         <Text mb="1em">
           Yes! Our engagement happened in 2019 and we were originally planning
           for two wedding ceremonies in 2020: a civil ceremony in Hong Kong and
-          church ceremony in the UK. These plans had to be cancelled due to the
-          pandemic, but we were able to hold a very small civil ceremony on 10th
-          May 2020, exactly five years before our newly planned church ceremony!
-          We are so glad that we&apos;ll finally be able to celebrate with all
-          our loved ones, better late than never!
+          a church ceremony in the UK. These plans had to be cancelled due to
+          the pandemic, but we were able to hold a very small civil ceremony on
+          10th May 2020, exactly five years before our newly planned church
+          ceremony! We are so glad that we&apos;ll finally be able to celebrate
+          with all our loved ones. Better late than never!
         </Text>
         <Image
           width="100%"
@@ -98,7 +98,7 @@ const QnAs: {
     q: "Is there space for plus-ones?",
     a: (
       <Text>
-        If there are additional people you wish to bring please get in touch
+        If there are additional people you wish to bring, please get in touch
         with us before the RSVP date and we&apos;ll do our best to include them
         if possible.
       </Text>
@@ -106,7 +106,9 @@ const QnAs: {
   },
   {
     q: "What about wedding presents?",
-    a: <Text>We will be update information about this at a closer date.</Text>,
+    a: (
+      <Text>We will have updated information about this at a closer date.</Text>
+    ),
   },
   {
     q: "Is it ok to take pictures during the wedding?",
@@ -118,7 +120,7 @@ const QnAs: {
     ),
   },
   {
-    q: "I am coming from overseas, how long should I stay in the UK?",
+    q: "I am coming from overseas. How long should I stay in the UK?",
     a: (
       <>
         <Text>

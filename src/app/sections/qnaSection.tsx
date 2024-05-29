@@ -151,7 +151,7 @@ export default function QnASection(props: SectionProps) {
       <Container maxW="container.sm">
         <VStack fontWeight={400} textAlign="left" gap="1em">
           <SectionHeading>{props.name}</SectionHeading>
-          <Accordion allowMultiple defaultIndex={[0]} width="100%">
+          <Accordion allowMultiple width="100%">
             {QnAs.map((item, idx) => (
               <AccordionItem key={`faq-${idx}`} borderColor="green.500">
                 <h2>

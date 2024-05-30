@@ -9,6 +9,7 @@ export default function SaveTheDatePage() {
         textAlign="center"
         h="100vh"
         justifyContent="center"
+        overflow="hidden"
       >
         <Image
           maxH="50vh"

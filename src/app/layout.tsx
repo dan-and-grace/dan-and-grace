@@ -53,7 +53,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="h-full">
+      <body>
         <Providers>{children}</Providers>
       </body>
     </html>

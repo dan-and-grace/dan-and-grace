@@ -5,6 +5,13 @@ export const theme = extendTheme({
     heading: "Gabarito, sans-serif",
     body: "Gabarito, sans-serif",
   },
+  styles: {
+    global: {
+      html: {
+        fontSize: "18px",
+      },
+    },
+  },
   colors: {
     brand: {
       100: "#ffe5d9",

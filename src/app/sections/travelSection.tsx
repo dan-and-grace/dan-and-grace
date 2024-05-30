@@ -1,9 +1,8 @@
-import { Heading, VStack, Text, Container, Button } from "@chakra-ui/react";
+import { Container, Text, VStack } from "@chakra-ui/react";
 import Link from "../components/link";
 import Section, { SectionProps } from "../components/section";
 import SectionHeading from "../components/sectionHeading";
 import SectionSubHeading from "../components/sectionSubHeading";
-import SectionSubSubHeading from "../components/sectionSubSubHeading";
 
 export default function TravelSection(props: SectionProps) {
   return (

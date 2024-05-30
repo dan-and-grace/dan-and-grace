@@ -27,11 +27,7 @@ export default function TwoColSectionLayout({
         <SectionHeading>{sectionName}</SectionHeading>
         <SimpleGrid columns={isLargerThan800 ? 2 : 1} width="100%" gap="1em">
           {[left, right].map((c, idx) => (
-            <Box
-              key={idx}
-              maxW={isLargerThan800 ? undefined : "md"}
-              margin="auto"
-            >
+            <Box key={idx} margin="auto" width="100%">
               {c}
             </Box>
           ))}

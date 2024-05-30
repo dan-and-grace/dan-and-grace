@@ -1,5 +1,5 @@
-import SaveTheDatePage from "./SaveTheDate";
+import HomePage from "./home/homePage";
 
 export default function Page() {
-  return <SaveTheDatePage />;
+  return <HomePage />;
 }

@@ -1,37 +1,29 @@
 import { Heading, Image, VStack, Text } from "@chakra-ui/react";
+import CenterPageLayout from "../components/centerPageLayout";
 
 export default function SaveTheDatePage() {
   return (
-    <main style={{ height: "100%", width: "100%" }}>
-      <VStack
-        p={3}
-        w="100%"
-        textAlign="center"
-        h="100%"
-        justifyContent="center"
-        overflow="hidden"
-      >
-        <Image
-          maxH="50vh"
-          minW={750}
-          rounded="sm"
-          objectFit="cover"
-          src="save_the_date_nottingham.svg"
-          alt="Drawing of Nottingham notable landmarks, such as the Robin Hood statue and the Nottingham Council House."
-        />
-        <VStack mt={5} mb={5} fontWeight={400} gap={0}>
-          <Heading fontSize="3xl" fontWeight={700}>
-            SAVE THE DATE
-          </Heading>
-          <Text fontSize="3xl" fontWeight={600}>
-            10th May 2025
-          </Text>
-          <Text fontFamily="Pacifico, sans-serif">for the wedding of</Text>
-          <Text fontSize="2xl">Dan Bartley & Grace Chin</Text>
-          <Text fontSize="xl">Carlton, Nottingham, UK</Text>
-          <Text>Invitations & updates on this website to come!</Text>
-        </VStack>
+    <CenterPageLayout>
+      <Image
+        maxH="50vh"
+        minW={750}
+        rounded="sm"
+        objectFit="cover"
+        src="save_the_date_nottingham.svg"
+        alt="Drawing of Nottingham notable landmarks, such as the Robin Hood statue and the Nottingham Council House."
+      />
+      <VStack mt={5} mb={5} fontWeight={400} gap={0}>
+        <Heading fontSize="3xl" fontWeight={700}>
+          SAVE THE DATE
+        </Heading>
+        <Text fontSize="3xl" fontWeight={600}>
+          10th May 2025
+        </Text>
+        <Text fontFamily="Pacifico, sans-serif">for the wedding of</Text>
+        <Text fontSize="2xl">Dan Bartley & Grace Chin</Text>
+        <Text fontSize="xl">Carlton, Nottingham, UK</Text>
+        <Text>Invitations & updates on this website to come!</Text>
       </VStack>
-    </main>
+    </CenterPageLayout>
   );
 }

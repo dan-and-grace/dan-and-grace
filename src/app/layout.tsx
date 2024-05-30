@@ -10,7 +10,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ height: "100%" }}>
       <head>
         {/* Favicon */}
         <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
@@ -53,7 +53,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body style={{ display: "flex", width: "100%", height: "100%" }}>
         <Providers>{children}</Providers>
       </body>
     </html>

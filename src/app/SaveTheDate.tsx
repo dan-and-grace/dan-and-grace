@@ -2,12 +2,12 @@ import { Heading, Image, VStack, Text } from "@chakra-ui/react";
 
 export default function SaveTheDatePage() {
   return (
-    <main>
+    <main style={{ height: "100%", width: "100%" }}>
       <VStack
         p={3}
-        w="100vw"
+        w="100%"
         textAlign="center"
-        h="100vh"
+        h="100%"
         justifyContent="center"
         overflow="hidden"
       >

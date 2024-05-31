@@ -73,14 +73,14 @@ const nottSpots: TouristSpot[] = [
 export default function NottsGuideSection(props: SectionProps) {
   return (
     <Section {...props}>
-      <Container maxW="container.sm">
-        <VStack fontWeight={400} textAlign="center" gap="1em">
+      <Container maxW="container.md">
+        <VStack fontWeight={400} gap="1em">
           <SectionHeading>{props.name}</SectionHeading>
           <Text>
             If you are spending some time in Nottingham, here are some
-            recommendations!
+            recommendations on where you may want to visit!
           </Text>
-          <UnorderedList textAlign="left">
+          <UnorderedList>
             {nottSpots.map((item) => (
               <ListItem key={item.name}>
                 <Link href={item.link}>{item.name}</Link> |{" "}

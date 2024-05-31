@@ -7,7 +7,7 @@ import SectionSubHeading from "../components/sectionSubHeading";
 export default function TravelSection(props: SectionProps) {
   return (
     <Section {...props}>
-      <Container maxW="container.sm">
+      <Container maxW="container.md">
         <VStack fontWeight={400} textAlign="left" gap="1em">
           <SectionHeading>{props.name}</SectionHeading>
           <SectionSubHeading>

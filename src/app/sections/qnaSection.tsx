@@ -148,7 +148,7 @@ const QnAs: {
 export default function QnASection(props: SectionProps) {
   return (
     <Section {...props}>
-      <Container maxW="container.sm">
+      <Container maxW="container.md">
         <VStack fontWeight={400} textAlign="left" gap="1em">
           <SectionHeading>{props.name}</SectionHeading>
           <Accordion allowMultiple width="100%">

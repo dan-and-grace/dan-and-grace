@@ -23,7 +23,7 @@ const LocationText = ({
   }, [googleMapsUrl]);
   return (
     <VStack gap={5}>
-      <VStack gap={0}>
+      <VStack gap={0} textAlign="center">
         {url ? (
           <Link href={url}>
             <Text fontWeight={600}>{name}</Text>

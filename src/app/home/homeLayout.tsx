@@ -56,7 +56,7 @@ export default function HomeLayout({
                 variant="ghost"
                 margin="0.5rem"
                 aria-label="Expand navigation menu"
-                icon={<CloseIcon fontSize="xl" />}
+                icon={<CloseIcon fontSize="xl" color="brand.500" />}
                 onClick={onClose}
               />
             </HStack>
@@ -78,12 +78,13 @@ export default function HomeLayout({
                   Dan & Grace
                 </Text>
               </VStack>
-              <Divider marginBottom="1em" borderColor="green.500" />
+              <Divider marginBottom="1em" borderColor="brand.500" />
               {pageConfiguration.sections.map((props) => {
                 return (
                   <Button
                     variant="brand"
                     fontWeight={600}
+                    fontSize={{ base: "xl", md: "md" }}
                     height="fit-content"
                     key={props.name}
                     onClick={handlePageClick(props.name)}
@@ -101,13 +102,14 @@ export default function HomeLayout({
             variant="ghost"
             margin="0.5rem"
             size="lg"
+            borderWidth={5}
             borderRadius={0}
-            borderWidth={3}
-            borderColor="black"
+            borderColor="brand.500"
             position="fixed"
             aria-label="Expand navigation menu"
-            icon={<HamburgerIcon fontSize="2xl" />}
+            icon={<HamburgerIcon fontSize="2xl" color="brand.500" />}
             onClick={onOpen}
+            _hover={{ bgColor: "white" }}
           />
         )}
         <HStack margin={0} padding={0} justifyContent="flex-end">

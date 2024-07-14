@@ -15,17 +15,23 @@ export default function HomeSection(props: SectionProps) {
       bgSize="cover"
       showTopDivider={false}
     >
-      <VStack mt={5} mb={5} fontWeight={400} gap={0}>
-        <VStack bgColor="white" p={5} borderColor="black" borderWidth={4}>
+      <VStack fontWeight={400} gap={0}>
+        <VStack
+          bgColor="white"
+          py={{ base: 5, md: 10 }}
+          px={{ base: 3, md: 10 }}
+          borderColor="black"
+          borderWidth={{ base: 5, md: 10 }}
+        >
           <Heading
             as="h1"
-            fontSize="3xl"
+            fontSize={{ base: "2xl", sm: "3xl", md: "5xl" }}
             fontWeight={700}
             width={{ base: "250px", md: "fit-content" }}
           >
             Dan Bartley & Grace Chin
           </Heading>
-          <Text fontSize="2xl" fontWeight={700}>
+          <Text fontSize={{ base: "xl", sm: "2xl" }} fontWeight={700}>
             Saturday 10 May 2025
           </Text>
         </VStack>

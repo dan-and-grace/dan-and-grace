@@ -24,13 +24,14 @@ export default function TwoColSectionLayout({
   return (
     <Container maxW="5xl">
       <VStack gap="1em">
-        <SectionHeading>{sectionName}</SectionHeading>
         <SimpleGrid columns={isLargerThan800 ? 2 : 1} width="100%" gap="1em">
-          {[left, right].map((c, idx) => (
-            <Box key={idx} margin="auto" width="100%">
-              {c}
-            </Box>
-          ))}
+          <Box margin="auto" width="100%">
+            {left}
+          </Box>
+          <Box margin="auto" width="100%">
+            <SectionHeading py={5}>{sectionName}</SectionHeading>
+            {right}
+          </Box>
         </SimpleGrid>
       </VStack>
     </Container>

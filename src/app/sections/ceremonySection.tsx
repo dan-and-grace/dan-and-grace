@@ -15,7 +15,7 @@ import TwoColSectionLayout from "../components/twoColSectionLayout";
 // TODO: Make it fit mobile
 export default function CeremonySection(props: SectionProps) {
   return (
-    <Section {...props}>
+    <Section {...props} showTopDivider={false}>
       <TwoColSectionLayout
         sectionName={props.name}
         left={
@@ -27,7 +27,7 @@ export default function CeremonySection(props: SectionProps) {
           />
         }
         right={
-          <VStack justifyContent="center" height="100%">
+          <VStack justifyContent="center" height="100%" fontSize="lg">
             <Text fontWeight={600}>12:00 PM to 12:45 PM</Text>
             <LocationText
               name="Sacred Heart Catholic Church"

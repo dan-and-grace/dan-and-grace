@@ -153,7 +153,7 @@ export default function QnASection(props: SectionProps) {
           <SectionHeading>{props.name}</SectionHeading>
           <Accordion allowMultiple width="100%">
             {QnAs.map((item, idx) => (
-              <AccordionItem key={`faq-${idx}`} borderColor="green.500">
+              <AccordionItem key={`faq-${idx}`} borderColor="brand.500">
                 <h2>
                   <AccordionButton>
                     <Box as="span" fontWeight={600} flex="1" textAlign="left">

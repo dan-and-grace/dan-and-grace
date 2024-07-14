@@ -17,7 +17,7 @@ export default function ReceptionSection(props: SectionProps) {
           />
         }
         right={
-          <VStack justifyContent="center" gap="1em">
+          <VStack justifyContent="center" gap="1em" fontSize="lg">
             <LocationText
               name="Richard Herrod Centre"
               address="Foxhill Rd, Carlton, Nottingham NG4 1RL"

@@ -1,15 +1,14 @@
 import {
   Container,
-  VStack,
-  Text,
-  Tag,
-  HStack,
-  UnorderedList,
+  Image,
   ListItem,
+  Text,
+  UnorderedList,
+  VStack,
 } from "@chakra-ui/react";
+import Link from "../components/link";
 import Section, { SectionProps } from "../components/section";
 import SectionHeading from "../components/sectionHeading";
-import Link from "../components/link";
 
 enum TagTypes {
   ReachableByPublicTransport = "Public transport friendly",
@@ -76,6 +75,12 @@ export default function NottsGuideSection(props: SectionProps) {
       <Container maxW="container.md">
         <VStack fontWeight={400} gap="1em">
           <SectionHeading>{props.name}</SectionHeading>
+          <Image
+            width="100%"
+            objectFit="cover"
+            src="save_the_date_nottingham.svg"
+            alt="Drawing of Nottingham notable landmarks, such as the Robin Hood statue and the Nottingham Council House."
+          />
           <Text>
             If you are spending some time in Nottingham, here are some
             recommendations on where you may want to visit!

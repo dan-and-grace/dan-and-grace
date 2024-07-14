@@ -1,11 +1,14 @@
-import { Heading } from "@chakra-ui/react";
+import { Heading, HeadingProps } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
-interface SectionHeadingProps {
+interface SectionHeadingProps extends HeadingProps {
   children: ReactNode;
 }
 
-export default function SectionHeading({ children }: SectionHeadingProps) {
+export default function SectionHeading({
+  children,
+  ...props
+}: SectionHeadingProps) {
   return (
     <Heading
       as="h2"
@@ -14,6 +17,7 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
       fontWeight={700}
       pb={3}
       textAlign="center"
+      {...props}
     >
       {children}
     </Heading>

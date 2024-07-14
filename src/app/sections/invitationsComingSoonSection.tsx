@@ -12,29 +12,30 @@ export default function InvitationsComingSoonSection(props: SectionProps) {
   return (
     <Section
       {...props}
-      pt="3em"
-      pb="3em"
-      backgroundColor="#FFCF00"
+      py="5em"
+      backgroundColor="brand.500"
       showTopDivider={false}
+      color="white"
     >
       <Container maxW="4xl">
         <VStack fontWeight={400} alignContent="center" alignItems="center">
-          <SectionHeading>{props.name}</SectionHeading>
-          <VStack gap="1em">
+          <SectionHeading fontSize={{ base: "3xl", md: "5xl" }}>
+            {props.name}
+          </SectionHeading>
+          <VStack gap={10}>
             <VStack gap={0} textAlign="center">
-              <Text>
-                We&apos;ll be sending invitations either by post/email.
+              <Text fontSize={{ base: "xl", md: "2xl" }}>
+                Send us your contact details so we can reach you.
               </Text>
-              <Text>To update your details, you can do so here:</Text>
             </VStack>
             <Button
               _hover={{
-                backgroundColor: "#fff9e0",
+                backgroundColor: "blue.500",
               }}
               backgroundColor="white"
               onClick={updateContactDetails}
             >
-              Update Contact Details
+              Send Contact Details
             </Button>
           </VStack>
         </VStack>

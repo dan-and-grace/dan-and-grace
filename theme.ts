@@ -8,7 +8,7 @@ export const theme = extendTheme({
   styles: {
     global: {
       html: {
-        fontSize: "18px",
+        fontSize: "20px",
       },
     },
   },
@@ -26,6 +26,9 @@ export const theme = extendTheme({
     },
     green: {
       500: "#00916e",
+    },
+    blue: {
+      500: "#b9d6ecff",
     },
   },
 });

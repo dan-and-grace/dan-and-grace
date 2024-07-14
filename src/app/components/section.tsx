@@ -17,8 +17,8 @@ export default function Section({
       pb="5em"
       id={name}
       width="100%"
-      borderTopColor="brand.500"
-      borderTopWidth={showDivider == false ? 0 : 10}
+      borderTopColor="green.500"
+      borderTopWidth={showDivider == false ? 0 : 5}
       {...props}
     ></VStack>
   );

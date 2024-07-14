@@ -61,20 +61,23 @@ export default function HomeLayout({
               />
             </HStack>
             <VStack padding="2em">
-              <Link href={`#${pageConfiguration.home.name}`}>
-                <VStack gap="0.5em">
-                  <Image
-                    width="3em"
-                    m="auto"
-                    objectFit="cover"
-                    src="daisy_doodle.svg"
-                    alt="Digital drawing of a daisy"
-                  />
-                  <Text fontSize="2xl" fontWeight={700}>
-                    Dan & Grace
-                  </Text>
-                </VStack>
-              </Link>
+              <VStack
+                gap="0.5em"
+                as="button"
+                onClick={handlePageClick("")}
+                _hover={{ color: "brand.700" }}
+              >
+                <Image
+                  width="3em"
+                  m="auto"
+                  objectFit="cover"
+                  src="daisy_doodle.svg"
+                  alt="Digital drawing of a daisy"
+                />
+                <Text fontSize="2xl" fontWeight={700}>
+                  Dan & Grace
+                </Text>
+              </VStack>
               <Divider marginBottom="1em" borderColor="green.500" />
               {pageConfiguration.sections.map((props) => {
                 return (
@@ -109,11 +112,10 @@ export default function HomeLayout({
         )}
         <HStack margin={0} padding={0} justifyContent="flex-end">
           <Box
-            width={
-              isOpen && isLargerThan800
-                ? `calc(100% - ${navbarWidth})`
-                : "100vw"
-            }
+            width={{
+              base: "100vw",
+              md: isOpen ? `calc(100% - ${navbarWidth})` : "100vw",
+            }}
             display={isMobileNavBarVisible ? "none" : "inline-block"}
             verticalAlign="top"
           >

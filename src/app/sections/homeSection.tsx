@@ -16,7 +16,12 @@ export default function HomeSection(props: SectionProps) {
       showTopDivider={false}
     >
       <VStack mt={5} mb={5} fontWeight={400} gap={0}>
-        <VStack bgColor="white" p={5} borderColor="black" borderWidth={4}>
+        <VStack
+          bgColor="white"
+          p={5}
+          borderColor="accentBlue.800"
+          borderWidth={4}
+        >
           <Heading
             as="h1"
             fontSize="3xl"

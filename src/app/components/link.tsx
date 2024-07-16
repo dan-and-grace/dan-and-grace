@@ -6,7 +6,10 @@ export default function Link(props: LinkProps) {
       textDecoration="underline"
       textUnderlineOffset="0.1em"
       rel="noopener noreferrer"
-      textColor="brand.700"
+      textColor="brandBlue.700"
+      _hover={{
+        textColor: "brandBlue.800",
+      }}
       fontWeight={700}
       {...props}
     />

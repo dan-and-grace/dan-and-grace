@@ -13,9 +13,9 @@ export default function NotFound() {
         src="dg_aghh.jpg"
         alt="Dan and Grace pulling a face."
       />
-      <Heading>Yikes! Page not found.</Heading>
+      <Heading color="brandOrange.700">Yikes! Page not found.</Heading>
       <p>We can&apos;t find the page you are looking for.</p>
-      <Button as="a" href="/" backgroundColor="brand.500" color="white">
+      <Button as="a" href="/" variant="primary">
         Return Home
       </Button>
     </CenterPageLayout>

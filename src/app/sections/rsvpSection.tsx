@@ -29,14 +29,7 @@ export default function RsvpSection(props: SectionProps) {
                 Please let us know by the <strong>15th March 2025</strong>.
               </Text>
             </VStack>
-            <Button
-              _hover={{
-                backgroundColor: "#fff9e0",
-              }}
-              backgroundColor="white"
-              onClick={rsvpHandler}
-              fontSize="xl"
-            >
+            <Button variant="light" onClick={rsvpHandler} fontSize="xl">
               RSVP
             </Button>
           </VStack>

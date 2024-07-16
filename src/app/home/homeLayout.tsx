@@ -61,12 +61,7 @@ export default function HomeLayout({
               />
             </HStack>
             <VStack padding="2em">
-              <VStack
-                gap="0.5em"
-                as="button"
-                onClick={handlePageClick("")}
-                _hover={{ color: "brand.700" }}
-              >
+              <VStack gap="0.5em" as="button" onClick={handlePageClick("")}>
                 <Image
                   width="3em"
                   m="auto"
@@ -78,17 +73,20 @@ export default function HomeLayout({
                   Dan & Grace
                 </Text>
               </VStack>
-              <Divider marginBottom="1em" borderColor="green.500" />
+              <Divider marginBottom="1em" borderColor="brandOrange.500" />
               {pageConfiguration.sections.map((props) => {
                 return (
                   <Button
-                    variant="brand"
+                    variant="ghost"
                     fontWeight={600}
                     fontSize={{ base: "xl", md: "md" }}
                     height="fit-content"
                     key={props.name}
                     onClick={handlePageClick(props.name)}
-                    _hover={{ color: "brand.700" }}
+                    _hover={{
+                      color: "brandOrange.800",
+                      textDecoration: "underline",
+                    }}
                   >
                     {props.name}
                   </Button>

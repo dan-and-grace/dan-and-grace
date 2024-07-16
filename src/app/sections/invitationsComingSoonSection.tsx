@@ -14,8 +14,8 @@ export default function InvitationsComingSoonSection(props: SectionProps) {
       {...props}
       pt="3em"
       pb="3em"
-      backgroundColor="green.500"
-      color="white"
+      backgroundColor="brandBlue.200"
+      color="accentBlue.800"
       showTopDivider={false}
     >
       <Container maxW="4xl">
@@ -28,13 +28,7 @@ export default function InvitationsComingSoonSection(props: SectionProps) {
               </Text>
               <Text>To update your details, you can do so here:</Text>
             </VStack>
-            <Button
-              _hover={{
-                backgroundColor: "#fff9e0",
-              }}
-              backgroundColor="white"
-              onClick={updateContactDetails}
-            >
+            <Button variant="light" onClick={updateContactDetails}>
               Update Contact Details
             </Button>
           </VStack>

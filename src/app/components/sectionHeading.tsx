@@ -11,6 +11,7 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <Heading
+      mt={5}
       as="h2"
       width="100%"
       fontSize="3xl"

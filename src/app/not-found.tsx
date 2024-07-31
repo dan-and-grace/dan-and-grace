@@ -1,7 +1,7 @@
 "use client";
 
-import { Button, Heading, VStack, Image } from "@chakra-ui/react";
-import CenterPageLayout from "./components/centerPageLayout";
+import CenterPageLayout from "@/app/components/centerPageLayout";
+import { Button, Heading, Image } from "@chakra-ui/react";
 
 export default function NotFound() {
   return (

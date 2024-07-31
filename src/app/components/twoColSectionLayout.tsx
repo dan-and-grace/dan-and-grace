@@ -1,35 +1,38 @@
-"use client";
-
 import {
   Box,
+  BoxProps,
   Container,
+  ContainerProps,
   SimpleGrid,
-  useMediaQuery,
   VStack,
 } from "@chakra-ui/react";
 import SectionHeading from "./sectionHeading";
 
-interface TwoColSectionLayout {
-  sectionName: string;
+interface TwoColSectionLayoutProps extends ContainerProps {
+  sectionName?: string;
   left: React.ReactNode;
   right: React.ReactNode;
+  leftProps?: BoxProps;
 }
 
 export default function TwoColSectionLayout({
   sectionName,
   left,
   right,
-}: TwoColSectionLayout) {
-  const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
+  leftProps,
+  ...props
+}: TwoColSectionLayoutProps) {
   return (
-    <Container maxW="5xl">
+    <Container maxW="5xl" {...props}>
       <VStack gap="1em">
-        <SimpleGrid columns={isLargerThan800 ? 2 : 1} width="100%" gap="1em">
-          <Box margin="auto" width="100%">
+        <SimpleGrid columns={{ base: 1, lg: 2 }} width="100%" gap="1em">
+          <Box margin="auto" width="100%" {...leftProps}>
             {left}
           </Box>
           <Box margin="auto" width="100%">
-            <SectionHeading py={5}>{sectionName}</SectionHeading>
+            {sectionName && (
+              <SectionHeading py={5}>{sectionName}</SectionHeading>
+            )}
             {right}
           </Box>
         </SimpleGrid>

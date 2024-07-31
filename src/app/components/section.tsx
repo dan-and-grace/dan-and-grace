@@ -1,13 +1,15 @@
 import { StackProps, VStack } from "@chakra-ui/react";
 
 export interface SectionProps extends StackProps {
-  name: string;
+  name?: string;
   showTopDivider?: boolean;
+  showBottomDivider?: boolean;
 }
 
 export default function Section({
   name,
-  showTopDivider: showDivider,
+  showTopDivider,
+  showBottomDivider,
   ...props
 }: SectionProps) {
   return (
@@ -17,8 +19,9 @@ export default function Section({
       pb="5em"
       id={name}
       width="100%"
-      borderTopColor="brandOrange.500"
-      borderTopWidth={showDivider == false ? 0 : 5}
+      borderColor="brandOrange.500"
+      borderTopWidth={showTopDivider == false ? 0 : 5}
+      borderBottomWidth={showBottomDivider == false ? 0 : 5}
       {...props}
     ></VStack>
   );

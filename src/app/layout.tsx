@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Providers } from "./providers";
+import DefaultLayout from "./components/defaultLayout";
 
 export const metadata: Metadata = {
   title: "Dan & Grace",
@@ -54,7 +55,9 @@ export default function RootLayout({
         />
       </head>
       <body style={{ display: "flex", width: "100%", height: "100%" }}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <DefaultLayout>{children}</DefaultLayout>
+        </Providers>
       </body>
     </html>
   );

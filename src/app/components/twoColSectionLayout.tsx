@@ -8,7 +8,8 @@ import {
 } from "@chakra-ui/react";
 import SectionHeading from "./sectionHeading";
 
-interface TwoColSectionLayoutProps extends ContainerProps {
+interface TwoColSectionLayoutProps
+  extends Omit<ContainerProps, "left" | "right"> {
   sectionName?: string;
   left: React.ReactNode;
   right: React.ReactNode;

@@ -1,5 +1,14 @@
 import { getDatetime } from "./datetime-utils";
 
+export const navigationPathItems: Record<string, string> = {
+  "Info & RSVP": "/#details",
+  Schedule: "/schedule",
+  Travel: "/travel",
+  Accomodation: "/accomodation",
+  "Nottingham Guide": "/nottingham-guide",
+  FAQS: "/faqs",
+};
+
 const date = "2025-05-10";
 export const weddingDate = "Saturday 10th May 2025";
 export const donationHref =
@@ -35,8 +44,8 @@ export const ceremony = {
   event: "Ceremony",
   time: getDatetime(date, "12:00:00"),
   location: churchLocation,
-  description: "Join us for our convalidation ceremony.",
-  link: { label: "Ceremony program coming soon!" },
+  description: { text: "" },
+  button: { label: "Ceremony program coming soon!" },
 };
 
 export const reception = {
@@ -48,62 +57,44 @@ interface ScheduleItem {
   event: string;
   time: Date;
   location: Location;
-  description: string;
-  link?: { label: string };
+  description: { text: string; link?: string };
+  button?: { label: string };
 }
 
 export const schedule: ScheduleItem[] = [
   ceremony,
   {
-    event: "Photo-taking & Reception begins",
+    event: "Photo-taking & journey to reception",
     time: getDatetime(date, "13:00:00"),
     location: receptionLocation,
-    description:
-      "Slowly make your way to the our reception venue. Catchup with your loved ones and grab yourself a drink when you get there!",
+    description: {
+      text: "Learn how to get to there",
+      link: navigationPathItems.Travel,
+    },
   },
   {
-    event: "Lunch",
+    event: "Lunch & speeches",
     time: getDatetime(date, "14:00:00"),
     location: receptionLocation,
-    description:
-      "Lunch is served! Please be sure to let us know your dietary requirements when you RSVP!",
-    link: { label: "Menu preview coming soon!" },
+    description: {
+      text:
+        "Please be sure to let us know your dietary requirements when you RSVP!",
+    },
+    button: { label: "Menu preview coming soon!" },
   },
   {
-    event: "Cake & Speeches",
-    time: getDatetime(date, "15:00:00"),
-    location: receptionLocation,
-    description:
-      "Help yourself to cake while you listen to us waffle. This might be a long one, make sure you're comfortable!",
-  },
-  {
-    event: "Activities (TBD)",
+    event: "Dancing",
     time: getDatetime(date, "16:00:00"),
     location: receptionLocation,
-    description:
-      "We are still in the process of planning the details for this part, but there will definitely be a chance to dance the afternoon away, or simply connect with friends and family and enjoy the music.",
-  },
-  {
-    event: "Winding down & goodbyes",
-    time: getDatetime(date, "18:00:00"),
-    location: receptionLocation,
-    description:
-      "It's been a long day! You're probably as exhausted as we are. Thank you all for coming! Have a great rest of the day whether it will entail a fancy dinner out, a cheeky takeaway, TV-watching, or simply the comfort of returning home and being out of your fancy clothes.",
+    description: { text: "Bring comfy shoes if you want to dance." },
   },
   {
     event: "The End",
     time: getDatetime(date, "18:30:00"),
     location: receptionLocation,
-    description:
-      "We wish everyone a happily ever after. This is where we say our final goodbyes and pack up. Hopefully we will see each of you soon whenever that might be!",
+    description: {
+      text: "Find out more things to do on your trip",
+      link: navigationPathItems["Nottingham Guide"],
+    },
   },
 ];
-
-export const navigationPathItems: Record<string, string> = {
-  "Info & RSVP": "/#details",
-  Schedule: "/schedule",
-  Travel: "/travel",
-  Accomodation: "/accomodation",
-  "Nottingham Guide": "/nottingham-guide",
-  FAQS: "/faqs",
-};

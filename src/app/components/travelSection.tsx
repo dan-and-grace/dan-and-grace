@@ -43,19 +43,18 @@ export default function TravelSection(props: SectionProps) {
           <SectionHeading>Getting to the ceremony</SectionHeading>
           <Text>
             <strong>By Car 🚗 - </strong> The church has roughly 45 parking
-            spaces. Other parking options are Carlton Hill Tesco, 2 Standhill
-            Road, or the Reception venue which is ~15 minutes&apos; walk away.
-            If you do decide to park, please kindly move your car to the
-            reception venue after the service as the church will have other
-            bookings later in the day. Many thanks!
+            spaces. Other parking options are 2 Standhill Road, or the Reception
+            venue which is ~15 minutes&apos; walk away. If you do decide to park
+            at the church, please kindly move your car to the reception venue
+            after the service as the church will have other bookings later in
+            the day. Many thanks!
           </Text>
           <Text>
             <strong>By Taxi 🚕 - </strong>
             We recommend the local company{" "}
-            <Link href="https://dgcars.co.uk/">DG Cars</Link> (which
-            coincidentally uses the same first letters of our names,{" "}
-            <strong>D</strong>an and <strong>G</strong>race) for booking by
-            phone or using their app. Alternatively,{" "}
+            <Link href="https://dgcars.co.uk/">DG Cars</Link> (and not just
+            because of the name!), which can be booked by phone or using their
+            app. Alternatively,{" "}
             <Link href="https://www.uber.com/gb/en/r/cities/taxi/nottingham-eng-gb/">
               Uber
             </Link>{" "}
@@ -78,7 +77,7 @@ export default function TravelSection(props: SectionProps) {
           <Text>
             <strong>By Car 🚗 - </strong>The venue has plenty of parking
             available. As above, if you park in the church car park for the
-            ceremony please drive to the reception venue afterwards as the
+            ceremony, please drive to the reception venue afterwards, as the
             church will need their car park for another booking.
           </Text>
         </VStack>

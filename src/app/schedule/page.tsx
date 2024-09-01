@@ -6,6 +6,7 @@ import { formatAMPM } from "../datetime-utils";
 import SectionSubSubHeading from "../components/sectionSubSubHeading";
 import React from "react";
 import DoodleView from "../components/doodleView";
+import Link from "../components/link";
 
 export default function Page() {
   return (
@@ -55,9 +56,16 @@ export default function Page() {
                 >
                   {scheduledEvent.event}
                 </SectionSubSubHeading>
-                <Text>{scheduledEvent.description}</Text>
-                {scheduledEvent.link && (
-                  <Button isDisabled>{scheduledEvent.link.label}</Button>
+                {scheduledEvent.description.link ? (
+                  <Link href={scheduledEvent.description.link}>
+                    {scheduledEvent.description.text}
+                  </Link>
+                ) : (
+                  <Text>{scheduledEvent.description.text}</Text>
+                )}
+
+                {scheduledEvent.button && (
+                  <Button isDisabled>{scheduledEvent.button.label}</Button>
                 )}
               </GridItem>
             </React.Fragment>

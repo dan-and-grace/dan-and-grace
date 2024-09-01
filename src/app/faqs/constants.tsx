@@ -55,10 +55,9 @@ export const QnAs: {
     q: "What food will be served?",
     a: (
       <Text>
-        We&apos;ll be having a buffet-style meal at around 2pm where there will
-        be lots of food to choose from! We will provide a preview of the menu at
-        a closer date. We&apos;re sorry though that we won&apos;t be able to
-        provide an evening meal.
+        We&apos;ll be having a meal at around 2pm! We will provide a preview of
+        the menu at a closer date. We&apos;re sorry though that we won&apos;t be
+        able to provide an evening meal.
       </Text>
     ),
   },

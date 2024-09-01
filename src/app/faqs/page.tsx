@@ -27,7 +27,9 @@ export default function Page() {
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel pb={4}>{item.a}</AccordionPanel>
+              <AccordionPanel pb={4}>
+                <VStack>{item.a}</VStack>
+              </AccordionPanel>
             </AccordionItem>
           ))}
         </Accordion>

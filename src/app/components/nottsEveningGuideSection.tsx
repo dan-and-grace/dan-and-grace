@@ -59,13 +59,17 @@ export default function NottsEveningGuideSection(props: SectionProps) {
           <Text>
             Our day wedding means that you will have time in the evening to do
             whatever you please. Here are some recommendations of what you could
-            do in Nottingham:
+            do in Nottingham, and check back here in the future for more ideas:
           </Text>
           <UnorderedList>
             {nottSpots.map((item) => (
               <ListItem key={item.name}>
-                <Link href={item.link}>{item.name}</Link> |{" "}
-                {item.price ? `${item.price} |` : ""} {item.description}
+                {item.link ? (
+                  <Link href={item.link}>{item.name}</Link>
+                ) : (
+                  <strong>{item.name}</strong>
+                )}{" "}
+                | {item.price ? `${item.price} |` : ""} {item.description}
               </ListItem>
             ))}
           </UnorderedList>

@@ -5,7 +5,7 @@ const HighlightCard = ({ children, ...props }: StackProps) => {
     <VStack
       bgColor="white"
       p={5}
-      borderColor="accentBlue.800"
+      borderColor="borderColor"
       borderWidth={4}
       gap={5}
       {...props}

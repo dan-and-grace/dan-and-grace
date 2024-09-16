@@ -43,6 +43,14 @@ const nottSpots: TouristSpot[] = [
     link: "https://www.rock-city.co.uk/",
   },
   {
+    name: "Mini-golfing at the Lost City",
+    description:
+      "We definitely recommend trying this out especially if you haven't tried adventure golf before!",
+    tags: [TagTypes.ReachableByPublicTransport],
+    category: CategoryTypes.Attractions,
+    link: "https://www.lostcityadventuregolf.com/nottingham/",
+  },
+  {
     name: "Stay home and order takeaway",
     description:
       "To those that prefer a relaxing evening after a busy day, we recommend ordering takeaway and vegging out in the comfort of where you are staying.",

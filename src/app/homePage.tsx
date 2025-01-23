@@ -183,6 +183,20 @@ export default function HomePage() {
                 </Text>
               </DetailsItem>
               <Divider />
+              <DetailsItem heading="Gifts">
+                <Text textAlign="left">
+                  Instead of wedding gifts, we would be grateful to accept
+                  donations to our Young Lives vs Cancer charity.
+                </Text>
+                <Link
+                  w="full"
+                  textAlign="left"
+                  href="https://www.justgiving.com/page/dan-and-grace-wedding"
+                >
+                  Learn more & donate here
+                </Link>
+              </DetailsItem>
+              <Divider />
               <DetailsItem heading="RSVP" gap={2}>
                 <Text textAlign="left">
                   Please RSVP to let us know if you can make it by the{" "}
